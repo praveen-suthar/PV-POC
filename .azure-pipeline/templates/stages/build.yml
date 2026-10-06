@@ -1,0 +1,51 @@
+parameters:
+- name: stage
+  type: string
+
+stages:
+  - stage: Build
+    pool:
+      name: $(agentPool)
+      demands:
+        - Agent.Name -equals $(agentType)-$(Build.BuildId)
+    jobs:
+      - job: Build
+        displayName: Building ${{ parameters.stage }}
+        steps:
+          - checkout: self
+            submodules: true
+
+          - bash: echo ${AZURE_DEVOPS_CLI_PAT} | az devops login
+            env:
+              AZURE_DEVOPS_CLI_PAT: $(System.AccessToken)
+            displayName: 'Login Azure DevOps Extension'
+
+          - template: ../steps/set-tag.yml
+          - template: ../steps/generate-config-secret-env.yml
+            parameters:
+              variableGroup: "$(env)-envs"
+              workingDirectory: $(System.DefaultWorkingDirectory)
+              secretNames:
+                - WSO2_CLIENT_CREDENTIALS
+
+          #- template: ../steps/sonarqube-scan.yml
+          #  parameters:
+          #      stage: Dev
+          #      password: $(password)
+          #      resultScanUrl: $(resultScanUrl)
+          #      projectKey: $(projectKey)
+          #      projectName: $(projectName)
+          #      token: $(token)
+          #      aksName: $(aksName)
+          #      azureResourceGroup: $(azureResourceGroup)
+          #      username: $(username)
+
+          - task: AzureCLI@2
+            displayName: Build and push an image to ACR registry
+            condition: not(and(eq(variables['Build.Reason'], 'PullRequest'),eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/master')))
+            inputs:
+              azureSubscription: $(azureSubscription)
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                az acr build --image $(imageRepository):$(TAG) --registry $(acrRegistryName) --file $(dockerfilePath) --secret-build-arg GITHUB_TOKEN=$(githubToken) .

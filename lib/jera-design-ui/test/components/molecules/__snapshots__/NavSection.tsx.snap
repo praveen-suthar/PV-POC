@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test NavSection 1`] = `
+<div
+  className=""
+>
+  <div
+    className="layouts-margin-bottom-2px"
+  >
+    <div
+      className="uk-section-xsmall uk-section-muted"
+    >
+      <div
+        className="uk-container uk-container-expand"
+      >
+        <nav
+          className="uk-navbar"
+        >
+          <div
+            className="uk-navbar-left"
+          >
+            <div
+              className=" uk-text-bold uk-text-large"
+            >
+              Hello
+            </div>
+          </div>
+          <div
+            className="uk-navbar-center"
+          />
+          <div
+            className="uk-navbar-right"
+          />
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+`;

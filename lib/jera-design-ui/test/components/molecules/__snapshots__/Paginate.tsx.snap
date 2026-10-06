@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test Paginate 1`] = `
+<div
+  className=""
+>
+  <div
+    className="molecules-paginate"
+  >
+    <ul>
+      <li
+        className="uk-display-inline disabled"
+      >
+        <a
+          aria-disabled="true"
+          aria-label="Previous page"
+          className="uk-button uk-button-default uk-button-small uk-margin-right"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          &lt;
+        </a>
+      </li>
+      <li
+        className="uk-display-inline selected"
+      >
+        <a
+          aria-current="page"
+          aria-label="Page 1 is your current page"
+          className="uk-button uk-button-default uk-button-small uk-button uk-button-default uk-button-small uk-button-primary"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          1
+        </a>
+      </li>
+      <li
+        className="uk-display-inline"
+      >
+        <a
+          aria-current={null}
+          aria-label="Page 2"
+          className="uk-button uk-button-default uk-button-small"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          2
+        </a>
+      </li>
+      <li
+        className="uk-display-inline"
+      >
+        <a
+          className="uk-button uk-button-default uk-button-small uk-disabled"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          ...
+        </a>
+      </li>
+      <li
+        className="uk-display-inline"
+      >
+        <a
+          aria-current={null}
+          aria-label="Page 29"
+          className="uk-button uk-button-default uk-button-small"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          29
+        </a>
+      </li>
+      <li
+        className="uk-display-inline"
+      >
+        <a
+          aria-current={null}
+          aria-label="Page 30"
+          className="uk-button uk-button-default uk-button-small"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          30
+        </a>
+      </li>
+      <li
+        className="uk-display-inline"
+      >
+        <a
+          aria-disabled="false"
+          aria-label="Next page"
+          className="uk-button uk-button-default uk-button-small uk-margin-left"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          &gt;
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  storybook:
+    build:
+      context: ..
+      dockerfile: docker/storybook/Dockerfile
+    command: yarn storybook
+    ports:
+      - 6006:6006
+    volumes:
+      - /home/node/app/node_modules
+      - ..:/home/node/app

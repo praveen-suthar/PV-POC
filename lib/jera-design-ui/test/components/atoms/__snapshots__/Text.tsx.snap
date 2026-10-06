@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test Large 1`] = `
+<div
+  className=" uk-text-large"
+>
+  Hello
+</div>
+`;
+
+exports[`Render test Middle 1`] = `
+<div
+  className=" uk-text-middle"
+>
+  Hello
+</div>
+`;
+
+exports[`Render test Title 1`] = `
+<div
+  className=" uk-text-bold uk-text-large"
+>
+  Hello
+</div>
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test Horizontal 1`] = `
+<div
+  className=" uk-divider-icon"
+/>
+`;
+
+exports[`Render test Vertical 1`] = `
+<div
+  className=" atoms-divider-vertical"
+/>
+`;

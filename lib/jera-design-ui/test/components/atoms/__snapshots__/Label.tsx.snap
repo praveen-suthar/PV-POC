@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test Label 1`] = `
+<div
+  className=" uk-form-label"
+>
+  Hello
+</div>
+`;

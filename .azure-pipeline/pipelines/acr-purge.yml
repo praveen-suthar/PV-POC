@@ -1,0 +1,40 @@
+trigger: none
+
+schedules:
+  - cron: "0 0 * * Mon"
+    branches:
+      include:
+        - master
+    always: true
+
+parameters:
+  - name: acrDays
+    type: number
+    default: 4
+  - name: dryRun
+    type: boolean
+    default: false
+
+variables:
+  - ${{ if parameters.dryRun }}:
+    - name: displayDryRun
+      value: ' (DRY RUN)'
+    - name: dryRunFlag
+      value: --dry-run
+  - ${{ else }}:
+    - name: displayDryRun
+      value: ''
+    - name: dryRunFlag
+      value: ''
+  - group: pipeline
+
+steps:
+  - task: AzureCLI@2
+    displayName: Purge${{ variables.displayDryRun }} from "$(imageRepository)"
+    inputs:
+      azureSubscription: $(azureSubscription)
+      scriptType: bash
+      scriptLocation: inlineScript
+      inlineScript: |
+        PURGE_CMD="acr purge --filter '^$(imageRepository):\b([a-z0-9]{10})\b$' --untagged --ago ${{ parameters.acrDays }}d ${{ variables.dryRunFlag }}"
+        az acr run --cmd "$PURGE_CMD" --registry "$(acrRegistryName)" /dev/null

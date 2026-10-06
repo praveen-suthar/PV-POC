@@ -1,0 +1,76 @@
+resources:
+  repositories:
+    - repository: DeploymentRepo
+      type: github
+      endpoint: jeraoss
+      name: jeraoss/$(deploymentRepo)
+      ref: main
+
+variables:
+  - ${{ if and(eq(variables['Build.Reason'], 'PullRequest'), eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/master')) }}:
+    - name: isPR
+      value: true
+    - name: env
+      value: dev
+  - ${{ elseif startsWith(variables['Build.SourceBranch'], 'refs/heads/feature') }}:
+    - name: isPreview
+      value: true
+    - name: env
+      value: dev
+  - ${{ elseif eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+    - name: isDev
+      value: true
+    - name: env
+      value: dev
+  - ${{ elseif and(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), contains(variables['Build.SourceBranch'], '-rc')) }}:
+    - name: isStaging
+      value: true
+    - name: env
+      value: stg
+  - ${{ elseif and(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], '-rc'))) }}:
+    - name: isProduction
+      value: true
+    - name: env
+      value: prd
+  - group: pipeline
+  - group: ${{ variables.env }}-envs
+
+stages:
+  - template: ../templates/stages/prepare.yml
+  - template: ../templates/stages/build.yml
+    parameters:
+      ${{ if variables.isPR }}:
+        stage: PR
+      ${{ if variables.isPreview }}:
+        stage: Preview
+      ${{ if variables.isDev }}:
+        stage: Dev
+      ${{ if variables.isStaging }}:
+        stage: Staging
+      ${{ if variables.isProduction }}:
+        stage: Production
+
+  - template: ../templates/stages/deploy.yml
+    parameters:
+      ${{ if variables.isPreview }}:
+        stage: Preview
+        deployment: Preview
+        environment: Preview
+        kustomizeFolder: preview
+      ${{ if variables.isDev }}:
+        stage: Dev
+        deployment: Development
+        environment: Development
+        kustomizeFolder: dev
+      ${{ if variables.isStaging }}:
+        stage: Staging
+        deployment: Staging
+        environment: Staging
+        kustomizeFolder: staging
+      ${{ if variables.isProduction }}:
+        stage: Production
+        deployment: Production
+        environment: Production
+        kustomizeFolder: prod
+
+  - template: ../templates/stages/cleanup.yml

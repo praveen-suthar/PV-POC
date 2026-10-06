@@ -1,0 +1,742 @@
+// grid scss start
+.uk-grid {
+  margin-left: -$fix_size_24;
+  & > * {
+    padding-left: $fix_size_24;
+  }
+  .uk-grid-margin {
+    margin-top: $fix_size_24;
+  }
+  &.uk-grid-small {
+    margin-left: -10px;
+    & > * {
+      padding-left: 10px;
+    }
+    .uk-grid-margin {
+      margin-top: 10px;
+    }
+  }
+}
+// grid scss end
+// input scss start
+
+.uk-input,
+.uk-textarea,
+.uk-button-outline,
+.uk-select,
+.form_select_input__control,
+.react-datepicker__input-container input {
+  border: 1px solid $grey_blue_40 !important;
+  border-radius: 8px !important;
+  background-color: $color_input_focus !important;
+  @include template_list_elevation;
+  padding: 0 15px;
+  font-size: 14px;
+  color: $grey_blue_90 !important;
+  &:focus,
+  &.active {
+    background-color: $color_input_focus !important;
+    border-color: $blue_60 !important;
+    color: $white !important;
+    & ~ .uk-form-icon {
+      // color: $blue_60 !important;
+    }
+  }
+  &:disabled {
+    border: 1px solid $grey_blue_40 !important;
+    background-color: $tuna !important;
+    opacity: 1;
+    color: $grey_blue_60 !important;
+    &::placeholder {
+      color: $grey_blue_60 !important;
+    }
+  }
+  &::placeholder {
+    color: $grey_blue_primary !important;
+  }
+}
+.uk-button-outline {
+  color: $white !important;
+}
+.uk-textarea {
+  padding-top: 8px;
+}
+::placeholder {
+  color: $grey_blue_40 !important;
+  font-weight: normal;
+}
+input {
+  &[type='date'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+      display: none !important;
+      -webkit-appearance: none !important;
+    }
+  }
+}
+// input scss end
+// disabled
+.form-control-custom {
+  &.disabled {
+    .uk-custom-label:after {
+      background-color: $tuna !important;
+    }
+  }
+}
+// disabled emd
+// Custom selectbox
+.form_select_input__control {
+  padding-right: 2px !important;
+  min-width: 200px;
+  min-height: 40px !important;
+  .form_select_input__value-container {
+    padding-left: 0;
+    padding-top: 2px;
+  }
+  .form_select_input__indicator-separator {
+    background: none;
+  }
+  .form_select_input__placeholder {
+    color: $grey_blue_40;
+  }
+  .form_select_input__single-value {
+    color: $white;
+  }
+  &.form_select_input__control--is-focused {
+    @include template_list_elevation;
+  }
+}
+.form_select_input__menu {
+  border: 1px solid $grey_blue_40 !important;
+  background-color: $color_input_focus !important;
+  z-index: 2 !important;
+  box-shadow: -7px -7px 30px #262e32, 14px 14px 40px rgba(16, 16, 18, 0.75) !important;
+  margin-top: 0px !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  font-family: 'Noto Sans JP', sans-serif;
+  .form_select_input__option {
+    padding: 5px 18px !important;
+    color: $white;
+    font-size: 12px !important;
+    &:hover,
+    &.form_select_input__option--is-focused {
+      background-color: rgba($white, 0.1) !important;
+    }
+    &.form_select_input__option--is-selected {
+      background-color: $blue_60 !important;
+    }
+    &--is-disabled {
+      background-color: rgba(0, 0, 0, 0.18) !important;
+      color: #999;
+      cursor: not-allowed;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.18) !important;
+        color: #999;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+.form_select_input__clear-indicator,
+.form_select_input__dropdown-indicator {
+  color: $white !important;
+}
+.form_select_input__multi-value {
+  background-color: $blue_90 !important;
+  border-radius: 6px !important;
+  color: $blue_30 !important;
+  .form_select_input__multi-value__label {
+    color: $blue_30 !important;
+  }
+  .form_select_input__multi-value__remove {
+    background-color: transparent !important;
+    color: $blue_30 !important;
+  }
+}
+.form_select_input__control.form_select_input__control--menu-is-open {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+// Custom selectbox end
+// button scss start
+.uk-button {
+  padding: 7px $heading_h2;
+  line-height: 1;
+  font-size: $paragraph_1;
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  border-radius: 30px;
+  min-height: 40px;
+  border: 0px;
+  text-transform: none;
+  min-width: 128px;
+  justify-content: center;
+  i {
+    font-size: 24px;
+    margin-right: 7px;
+    margin-left: -5px;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+.uk-button-primary,
+.uk-button-orange,
+.uk-button-success,
+.uk-button-danger,
+.uk-button-grey {
+  background: linear-gradient(274.22deg, $blue_40 0.81%, $blue_70 96.42%);
+  background-color: $blue_70;
+  color: $white !important;
+  position: relative;
+  z-index: 1;
+  i {
+    color: $white;
+  }
+  &::before {
+    @include after_before;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: linear-gradient(274.22deg, $blue_70 0.81%, $blue_40 96.42%);
+    background-color: $blue_70;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: -1;
+    border-radius: 30px;
+  }
+  &:hover {
+    background: linear-gradient(274.22deg, $blue_70 0.81%, $blue_40 96.42%);
+    color: $white !important;
+    &::before {
+      background: linear-gradient(274.22deg, $blue_40 0.81%, $blue_70 96.42%);
+    }
+  }
+  &:disabled {
+    background: linear-gradient(
+      274.22deg,
+      $blue_40 0.81%,
+      $blue_70 96.42%
+    ) !important;
+    &::before {
+      background: linear-gradient(
+        274.22deg,
+        $blue_70 0.81%,
+        $blue_40 96.42%
+      ) !important;
+    }
+  }
+  &.uk-button-rectangle {
+    &:disabled {
+      background: linear-gradient(
+        274.22deg,
+        $blue_40 0.81%,
+        $blue_70 96.42%
+      ) !important;
+      &::before {
+        background: unset !important;
+      }
+    }
+  }
+}
+.uk-button-default {
+  background-color: $grey_blue_30 !important;
+  color: $white !important;
+  position: relative;
+  z-index: 1;
+  i {
+    color: $white;
+  }
+  &::before {
+    @include after_before;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background-color: $grey_blue_20;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: -1;
+    border-radius: 30px;
+  }
+  &:hover {
+    background-color: $grey_blue_20 !important;
+    color: $white !important;
+    &::before {
+      background-color: $grey_blue_30;
+    }
+  }
+  &:disabled {
+    background-color: $grey_blue_30 !important;
+    &::before {
+      background-color: $grey_blue_20 !important;
+    }
+  }
+  &.uk-button-rectangle {
+    &:disabled {
+      background-color: $grey_blue_30 !important;
+      &::before {
+        background: unset !important;
+      }
+    }
+  }
+}
+.uk-button-orange {
+  background: linear-gradient(274.22deg, $orange_40 0.81%, $orange_70 96.42%);
+  background-color: $orange_70;
+  &::before {
+    background: linear-gradient(274.22deg, $orange_70 0.81%, $orange_40 96.42%);
+    background-color: $orange_70;
+  }
+  &:hover {
+    background: linear-gradient(274.22deg, $orange_70 0.81%, $orange_40 96.42%);
+    color: $white !important;
+    &::before {
+      background: linear-gradient(
+        274.22deg,
+        $orange_40 0.81%,
+        $orange_70 96.42%
+      );
+    }
+  }
+  &:disabled {
+    background: linear-gradient(
+      274.22deg,
+      $orange_40 0.81%,
+      $orange_70 96.42%
+    ) !important;
+    &::before {
+      background: linear-gradient(
+        274.22deg,
+        $orange_70 0.81%,
+        $orange_40 96.42%
+      ) !important;
+    }
+  }
+  &.uk-button-rectangle {
+    &:disabled {
+      background: linear-gradient(
+        274.22deg,
+        $orange_40 0.81%,
+        $orange_70 96.42%
+      ) !important;
+      &::before {
+        background: unset !important;
+      }
+    }
+  }
+}
+.uk-button-success {
+  background: linear-gradient(274.22deg, $green_40 0.81%, $green_80 96.42%);
+  background-color: $green_80;
+  &::before {
+    background: linear-gradient(274.22deg, $green_80 0.81%, $green_40 96.42%);
+    background-color: $green_80;
+  }
+  &:hover {
+    background: linear-gradient(274.22deg, $green_80 0.81%, $green_40 96.42%);
+    color: $white !important;
+    &::before {
+      background: linear-gradient(274.22deg, $green_40 0.81%, $green_80 96.42%);
+    }
+  }
+  &:disabled {
+    background: linear-gradient(
+      274.22deg,
+      $green_40 0.81%,
+      $green_80 96.42%
+    ) !important;
+    &::before {
+      background: linear-gradient(
+        274.22deg,
+        $green_80 0.81%,
+        $green_40 96.42%
+      ) !important;
+    }
+  }
+  &.uk-button-rectangle {
+    &:disabled {
+      background: linear-gradient(
+        274.22deg,
+        $green_40 0.81%,
+        $green_80 96.42%
+      ) !important;
+      &::before {
+        background: unset !important;
+      }
+    }
+  }
+}
+.uk-button-danger {
+  background: linear-gradient(274.22deg, $red_60 0.81%, $red_80 96.42%);
+  background-color: $red_80;
+  &::before {
+    background: linear-gradient(274.22deg, $red_80 0.81%, $red_60 96.42%);
+    background-color: $red_80;
+  }
+  &:hover {
+    background: linear-gradient(274.22deg, $red_80 0.81%, $red_60 96.42%);
+    color: $white !important;
+    &::before {
+      background: linear-gradient(274.22deg, $red_60 0.81%, $red_80 96.42%);
+    }
+  }
+  &:disabled {
+    background: linear-gradient(
+      274.22deg,
+      $red_60 0.81%,
+      $red_80 96.42%
+    ) !important;
+    &::before {
+      background: linear-gradient(
+        274.22deg,
+        $red_80 0.81%,
+        $red_60 96.42%
+      ) !important;
+    }
+  }
+  &.uk-button-rectangle {
+    &:disabled {
+      background: linear-gradient(
+        274.22deg,
+        $red_60 0.81%,
+        $red_80 96.42%
+      ) !important;
+      &::before {
+        background: unset !important;
+      }
+    }
+  }
+}
+.uk-button-grey {
+  background: linear-gradient(
+    103.29deg,
+    $grey_blue_70 10.03%,
+    $grey_blue_40 90.92%
+  );
+  &:before {
+    background: linear-gradient(
+      314.86deg,
+      $grey_blue_70 0%,
+      $grey_blue_40 100%
+    );
+  }
+  &:hover {
+    background: linear-gradient(
+      103.29deg,
+      $grey_blue_40 10.03%,
+      $grey_blue_70 90.92%
+    );
+    &:before {
+      background: linear-gradient(
+        314.86deg,
+        $grey_blue_40 0%,
+        $grey_blue_70 100%
+      );
+    }
+  }
+  &:disabled {
+    background: linear-gradient(
+      103.29deg,
+      $grey_blue_70 10.03%,
+      $grey_blue_40 90.92%
+    ) !important;
+    &:before {
+      background: linear-gradient(
+        314.86deg,
+        $grey_blue_70 0%,
+        $grey_blue_40 100%
+      ) !important;
+    }
+  }
+}
+.uk-button-outline {
+  padding: 5px 9px;
+  min-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    font-size: 20px;
+  }
+  span {
+    margin-left: 5px;
+  }
+  &.filled {
+    background: $grey_blue_20 !important;
+    &:hover {
+      background: $grey_blue_30 !important;
+    }
+  }
+}
+// button scss end
+[class*='uk-modal-close-'] {
+  top: 19px;
+  right: 20px;
+  color: $white !important;
+  background-color: $grey_blue_10;
+  border: 1px solid $grey_blue_30;
+  @include radius-100;
+  padding: 5px 10px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  @include easing;
+  i {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+  &:hover {
+    color: $blue-70 !important;
+  }
+  svg {
+    display: none;
+  }
+}
+.uk-select {
+  padding-right: 30px !important;
+  &:not([multiple]):not([size]) {
+    background-image: url('../images/icons/icn-down-arrow.svg') !important;
+    background-position: right 10px top 50%;
+    background-size: 13px;
+    option {
+      color: $white;
+    }
+  }
+}
+// React multi select
+.basic-multi-select {
+  .select__control {
+    background: $color_input_focus;
+    border: 1px solid $grey_blue_40;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 25px rgba(16, 16, 18, 0.5), -7px -7px 25px #262e32;
+    border-radius: 8px;
+    .select__value-containe {
+      .select__multi-value {
+        background: $blue_90;
+        border-radius: 6px;
+        justify-content: space-between;
+        padding: 0px 0px 0px 5px;
+        display: flex;
+        align-items: center;
+        margin: 2px 3px;
+        .select__multi-value__label {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: initial;
+          display: flex;
+          align-items: center;
+          letter-spacing: 0.1px;
+          text-transform: capitalize;
+          color: $blue_30;
+          padding: 0px;
+        }
+        .select__multi-value__remove {
+          color: $blue_30 !important;
+          :hover {
+            background-color: transparent !important;
+            color: $blue_30 !important;
+          }
+          svg {
+            height: 20px;
+            width: 20px;
+            fill: $blue_30 !important;
+          }
+        }
+      }
+    }
+    .select__indicators {
+      .select__indicator {
+        svg {
+          color: $white;
+          fill: $white;
+        }
+      }
+      .select__indicator-separator {
+        background-color: $grey_blue_40 !important;
+        margin-bottom: 9px !important;
+        margin-top: 9px !important;
+      }
+    }
+  }
+}
+.select--is-disabled {
+  .select__control.select__control--is-disabled {
+    background: $tuna;
+    border: 1px solid $grey_blue_40;
+    box-sizing: border-box;
+    border-radius: 8px;
+    .select__placeholder {
+      color: $white !important;
+    }
+    .select__indicator {
+      color: $grey_primary;
+    }
+  }
+}
+// React multi select  end
+// Custom select disabled
+.form_select_input--is-disabled {
+  .form_select_input__control--is-disabled {
+    background: $tuna !important;
+    border: 1px solid $grey_blue_40 !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+    .form_select_input__placeholder {
+      color: $white !important;
+    }
+    .form_select_input__indicator {
+      color: $grey_95 !important;
+    }
+  }
+}
+// Custom select disabled emd
+//React Year picker
+.react-datepicker-popper {
+  z-index: 2 !important;
+}
+.react-datepicker__year--container {
+  background: $color_input_focus !important;
+  border-radius: 8px !important;
+}
+.react-datepicker-popper .react-datepicker {
+  background: $color_input_focus;
+}
+.react-datepicker {
+  border: 1px solid $grey_blue_40;
+  background: $color_input_focus !important;
+  color: $white !important;
+  border-radius: 8px !important;
+}
+.react-datepicker__input-container input {
+  height: 40px;
+  color: $white;
+  background-image: url('../images/icons/icn-down-arrow.svg') !important;
+  background-position: right 10px top 50% !important;
+  background-size: 13px;
+  background-repeat: no-repeat;
+  outline: 0px !important;
+  width: 100%;
+  padding-top: 2px;
+  margin-top: 1px;
+}
+.react-datepicker-year-header {
+  border-radius: 8px 8px 0px 0px !important;
+}
+.react-datepicker-year-header,
+.react-datepicker__year {
+  background: $color_input_focus !important;
+  color: $white !important;
+}
+.react-datepicker__navigation {
+  color: $white;
+}
+.react-datepicker__navigation-icon::before {
+  top: 13px !important;
+}
+.react-datepicker__year-text:hover {
+  background: rgba($white, 0.1) !important;
+  border-radius: 4px !important;
+}
+.react-datepicker__year-text--today {
+  background: $blue_30 !important;
+  border-radius: 4px !important;
+  &:hover {
+    background: $blue_30 !important;
+  }
+}
+.react-datepicker__year-text--selected {
+  background: $blue_70 !important;
+  &:hover {
+    background: $blue_70 !important;
+  }
+}
+.react-datepicker-popper[data-placement^='bottom']
+  .react-datepicker__triangle::after {
+  border-bottom-color: $grey_blue_40 !important;
+}
+.react-datepicker-popper[data-placement^='bottom']
+  .react-datepicker__triangle::before {
+  display: none;
+}
+.react-datepicker__year-wrapper {
+  display: block !important;
+}
+.no-icon .react-datepicker__input-container input {
+  background-image: none !important;
+}
+.react-datepicker-popper[data-placement^='top'] {
+  .react-datepicker__triangle {
+    &:after {
+      display: none !important;
+    }
+  }
+}
+//React Year picker end
+
+// Dashboard
+.uk-border-bottom {
+  border-bottom: solid 1px $grey_blue_80;
+}
+.uk-border-dashed-right-after {
+  position: relative;
+  &:after {
+    content: '';
+    border: dashed 1px $grey_blue_80;
+    height: 100%;
+    position: absolute;
+    right: -5px;
+    top: 0;
+  }
+}
+.font-40 {
+  font-size: 40px !important;
+}
+.uk-chart-shadow {
+  @include shadow-chart-donut;
+}
+.form_select_input__multi-value--is-disabled {
+  .form_select_input__multi-value__label {
+    padding: 2px 6px 4px 6px !important;
+  }
+}
+// recharts-brush
+.recharts-brush {
+  > rect {
+    fill-opacity: 1;
+    fill: #363f44;
+  }
+}
+.recharts-brush-slide {
+  fill: #1a1c1f !important;
+}
+.recharts-brush-traveller {
+  > rect {
+    fill: #46535a;
+  }
+}
+.recharts-brush-texts {
+  > text {
+    fill: $white;
+  }
+}
+
+// Responsive
+@media (min-width: 640px) {
+  .uk-margin-remove-top\@s {
+    margin-top: 0px !important;
+  }
+  .uk-margin-remove-bottom\@s {
+    margin-bottom: 0px !important;
+  }
+  .uk-margin-small-left\@s {
+    margin-left: 10px !important;
+  }
+}

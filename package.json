@@ -1,0 +1,81 @@
+{
+  "name": "nodejs-client-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "contributors": [
+    {
+      "name": "Tomoki Shigeta"
+    }
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "postinstall": "husky install",
+    "test": "jest",
+    "test:reporter": "jest --ci --reporters=default --reporters=jest-junit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format:write": "prettier . --write",
+    "start": "concurrently \"tsc --watch\" \"parcel src/index.html\"",
+    "dev:container:rebuild": "docker-compose -f docker/docker-compose.yml build --no-cache",
+    "dev:container:start": "docker-compose -f docker/docker-compose.yml up",
+    "dev:container:start:nocache": "yarn dev:container:rebuild && yarn dev:container:start",
+    "build-lib": "cd lib/jera-design-ui && yarn && cpy package.json dist/",
+    "link:jera-design-ui": "cd lib/jera-design-ui/dist && yarn link && cd ../../../ && yarn link @jeraoss/jera-design-ui",
+    "unlink:jera-design-ui": "yarn unlink @jeraoss/jera-design-ui && cd lib/jera-design-ui/dist && yarn unlink",
+    "build": "yarn build-lib && yarn link:jera-design-ui && yarn",
+    "bundle": "yarn parcel build src/index.html",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "7.13.10",
+    "@babel/preset-typescript": "7.13.0",
+    "@types/jest": "26.0.20",
+    "@types/node": "14.14.33",
+    "@types/react": "^17.0.36",
+    "@types/react-dom": "^17.0.11",
+    "@types/uikit": "^3.3.1",
+    "@typescript-eslint/eslint-plugin": "4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "concurrently": "^8.2.2",
+    "cpy-cli": "^3.1.1",
+    "eslint": "7.21.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "husky": "6.0.0",
+    "jest": "26.6.3",
+    "jest-junit": "^12.2.0",
+    "lint-staged": "10.5.4",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "2.2.1",
+    "sass": "^1.69.5",
+    "typescript": "4.2.3"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^2.19.0",
+    "@azure/msal-react": "^1.1.1",
+    "@microsoft/microsoft-graph-client": "^3.0.2",
+    "d3": "^7.6.1",
+    "i18next": "^23.7.11",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.37",
+    "navi": "^0.14.0",
+    "react": "^17.0.2",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.18.4",
+    "react-navi": "^0.14.4",
+    "react-paginate": "^8.2.0",
+    "react-select": "^5.4.0",
+    "recharts": "^2.10.1",
+    "uikit": "^3.6.18"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write"
+    ]
+  }
+}

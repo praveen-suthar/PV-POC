@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test Tabs 1`] = `
+<div
+  className=""
+>
+  <div
+    className="uk-container"
+  >
+    <div
+      className="molecules-tabs-wrap"
+    >
+      <ul
+        className="molecules-tabs uk-margin-remove-vertical uk-child-width-expand uk-flex-nowrap"
+        data-uk-tab={true}
+      >
+        <li
+          className="molecules-tabs-tab uk-active"
+        >
+          <a
+            className="uk-text-capitalize"
+            href=""
+            onClick={[Function]}
+          >
+            Tab A
+          </a>
+        </li>
+        <li
+          className="molecules-tabs-tab "
+        >
+          <a
+            className="uk-text-capitalize"
+            href=""
+            onClick={[Function]}
+          >
+            Tab B
+          </a>
+        </li>
+        <li
+          className="molecules-tabs-tab "
+        >
+          <a
+            className="uk-text-capitalize"
+            href=""
+            onClick={[Function]}
+          >
+            Tab C
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>
+        A
+      </h2>
+      <p>
+        Hi, it's A.
+      </p>
+    </div>
+  </div>
+</div>
+`;

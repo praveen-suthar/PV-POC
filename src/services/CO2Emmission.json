@@ -1,0 +1,74 @@
+[
+  {
+    "year": "2023",
+    "emmissionData": {
+      "thermal": "0.445",
+      "zeroThermal": "0.000",
+      "pv": "0.000",
+      "wind": "0.000"
+    }
+  },
+  {
+    "year": "2024",
+    "emmissionData": {
+      "thermal": "0.445",
+      "zeroThermal": "0.000",
+      "pv": "0.000",
+      "wind": "0.000"
+    }
+  },
+  {
+    "year": "2025",
+    "emmissionData": {
+      "thermal": "0.445",
+      "zeroThermal": "0.000",
+      "pv": "0.000",
+      "wind": "0.000"
+    }
+  },
+  {
+    "year": "2026",
+    "emmissionData": {
+      "thermal": "0.445",
+      "zeroThermal": "0.000",
+      "pv": "0.000",
+      "wind": "0.000"
+    }
+  },
+  {
+    "year": "2027",
+    "emmissionData": {
+      "thermal": "0.445",
+      "zeroThermal": "0.000",
+      "pv": "0.000",
+      "wind": "0.000"
+    }
+  },
+  {
+    "year": "2028",
+    "emmissionData": {
+      "thermal": "0.445",
+      "zeroThermal": "0.000",
+      "pv": "0.000",
+      "wind": "0.000"
+    }
+  },
+  {
+    "year": "2029",
+    "emmissionData": {
+      "thermal": "0.445",
+      "zeroThermal": "0.000",
+      "pv": "0.000",
+      "wind": "0.000"
+    }
+  },
+  {
+    "year": "2030",
+    "emmissionData": {
+      "thermal": "0.445",
+      "zeroThermal": "0.000",
+      "pv": "0.000",
+      "wind": "0.000"
+    }
+  }
+]

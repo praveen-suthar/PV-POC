@@ -1,0 +1,57 @@
+@import '_color';
+@import '_variables';
+
+.chart-continer {
+  display: $flex;
+  position: $relative;
+  justify-content: $center;
+  align-items: $center;
+  float: right;
+}
+.dount-chart-container {
+  position: $absolute;
+  top: $val0;
+  left: $val0;
+}
+.totalRatio {
+  font-size: 10px;
+}
+.tooltip-text {
+  text-transform: none !important;
+}
+.uk-tooltip-cutom {
+  position: $relative;
+  .uk-tooltip {
+    position: $absolute;
+    top: $val15;
+    left: -90px;
+    min-width: 200px;
+    &[class*='uk-animation-'] {
+      animation: 0.3s ease-out both;
+    }
+    &.uk-animation-scale-up {
+      animation-name: uk-fade, uk-scale-up;
+      &::after {
+        margin-top: 0px !important;
+      }
+    }
+  }
+  &:hover {
+    .uk-tooltip {
+      display: $block !important;
+    }
+  }
+  .font-10 {
+    font-size: $val10;
+  }
+  .ml-3 {
+    margin-left: 3px;
+  }
+  .top-2 {
+    top: 2px;
+    position: $relative;
+  }
+  .pl-15 {
+    padding-left: 15px;
+  }
+}

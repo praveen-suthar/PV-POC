@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test Icon 1`] = `
+<a
+  className="
+      
+      atoms-button-icon
+      
+    "
+  href=""
+  onClick={[Function]}
+  type="button"
+>
+  Hello
+</a>
+`;
+
+exports[`Render test Link 1`] = `
+<a
+  className="
+      
+      atoms-button
+      uk-button-text
+      
+    "
+  href=""
+  onClick={[Function]}
+  type="button"
+>
+  Hello
+</a>
+`;
+
+exports[`Render test Middle 1`] = `
+<a
+  className="
+      
+      atoms-button
+      uk-button uk-button-default
+      
+    "
+  href=""
+  onClick={[Function]}
+  type="button"
+>
+  Hello
+</a>
+`;
+
+exports[`Render test Small 1`] = `
+<a
+  className="
+      
+      atoms-button
+      uk-button uk-button-default uk-button-small
+      
+    "
+  href=""
+  onClick={[Function]}
+  type="button"
+>
+  Hello
+</a>
+`;

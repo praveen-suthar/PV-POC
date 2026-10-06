@@ -1,0 +1,104 @@
+// Variables
+$offcanvas-animation-width: 250px
+
+body
+ &:not(.uk-offcanvas-flip).uk-offcanvas-container-animation
+   left: $offcanvas-animation-width
+
+.atoms
+
+  &-button
+    user-select: none /* supported by Chrome and Opera */
+    -webkit-user-select: none /* Safari */
+    -khtml-user-select: none /* Konqueror HTML */
+    -moz-user-select: none /* Firefox */
+    -ms-user-select: none /* Internet Explorer/Edge */
+
+    &-disabled
+      opacity: 0.4
+
+    &-icon
+      @extend .atoms-button
+      line-height: 1
+      color: #999
+
+  &-divider
+
+    &-horizontal
+      // It comes from uikit.
+
+    &-vertical
+      background-color: lightgray
+      height: 40px
+      width: 2px
+      margin: 0 20px
+
+  &-fieldset
+    border: 1px solid #999
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08)
+    padding: 20px
+
+  &-input
+
+    &-textarea
+      resize: none
+
+  &-legend
+    color: #666
+    padding-left: 6px
+    padding-right: 6px
+
+.molecules
+
+  &-paginate
+    user-select: none /* supported by Chrome and Opera */
+    -webkit-user-select: none /* Safari */
+    -khtml-user-select: none /* Konqueror HTML */
+    -moz-user-select: none /* Firefox */
+    -ms-user-select: none /* Internet Explorer/Edge */
+    ul
+      padding-left: 0
+
+  &-sidebar
+    width: $offcanvas-animation-width
+    left: -($offcanvas-animation-width)
+
+  &-tabs
+    overflow-x: scroll
+    overscroll-behavior: contain
+    scroll-snap-type: x
+
+    user-select: none /* supported by Chrome and Opera */
+    -webkit-user-select: none /* Safari */
+    -khtml-user-select: none /* Konqueror HTML */
+    -moz-user-select: none /* Firefox */
+    -ms-user-select: none /* Internet Explorer/Edge */
+
+    &::-webkit-scrollbar
+      display: none
+
+    &-wrap
+      padding-left: 20px
+
+    &-tab
+      min-width: 150px !important
+      white-space: nowrap
+      overflow: hidden
+      padding-left: 0
+      scroll-snap-align: start
+      border-top: 1px solid #e5e5e5
+      border-bottom: 1px solid #e5e5e5
+
+      &:first-child
+        border-left: 2px dashed #e5e5e5
+
+      &:last-child
+        border-right: 2px dashed #e5e5e5
+
+      &:hover
+        border-top: 1px solid #b2b2b2
+        border-bottom: 1px solid #b2b2b2
+
+      &:active
+        border-top: 1px solid #999
+        border-bottom: 1px solid #999

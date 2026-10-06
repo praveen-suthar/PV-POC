@@ -1,0 +1,85 @@
+{
+  "name": "@jeraoss/jera-design-ui",
+  "version": "1.1.7",
+  "description": "Basic React components for JERA projects.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "prepare": "yarn build:ts && yarn build:sass",
+    "npm-publish": "yarn lint && yarn clean && npm publish --scope=@jeraoss --registry=https://npm.pkg.github.com",
+    "npm-publish:dry": "yarn npm-publish --dry-run",
+    "build:ts": "rollup -c",
+    "build:sass": "yarn sass ./src/init.scss ./dist/init.css --no-source-map",
+    "lint": "eslint --ext ts,tsx src",
+    "test": "yarn jest",
+    "test:reporter": "yarn jest --ci --testResultsProcessor='./node_modules/jest-junit-reporter'",
+    "storybook": "start-storybook -p 6006",
+    "storybook:docker": "docker compose -f ./docker/docker-compose.yml up --build"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeraoss/jera-design-ui"
+  },
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "keywords": [],
+  "author": "",
+  "private": false,
+  "devDependencies": {
+    "@azure/msal-browser": "^2.19.0",
+    "@azure/msal-react": "^1.1.1",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@types/react": "^17.0.37",
+    "@types/react-paginate": "^7.1.1",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "jest": "^27.3.1",
+    "navi": "^0.14.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-navi": "^0.14.4",
+    "react-test-renderer": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.58.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "sass": "^1.43.3",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
+  },
+  "peerDependencies": {
+    "@azure/msal-browser": "^2.19",
+    "@azure/msal-react": "^1.1",
+    "navi": "^0.14",
+    "react": "^17",
+    "react-dom": "^17",
+    "react-navi": "^0.14",
+    "uikit": "^3.9"
+  },
+  "dependencies": {
+    "react-paginate": "^8.0.1"
+  }
+}

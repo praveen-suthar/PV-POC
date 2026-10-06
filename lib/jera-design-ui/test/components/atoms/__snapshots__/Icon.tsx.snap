@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test FileEdit 1`] = `
+<span
+  uk-icon="file-edit"
+/>
+`;
+
+exports[`Render test FileText 1`] = `
+<span
+  uk-icon="file-text"
+/>
+`;
+
+exports[`Render test Menu 1`] = `
+<span
+  uk-icon="menu"
+/>
+`;
+
+exports[`Render test Pencil 1`] = `
+<span
+  uk-icon="pencil"
+/>
+`;
+
+exports[`Render test Plus 1`] = `
+<span
+  uk-icon="plus"
+/>
+`;
+
+exports[`Render test Trash 1`] = `
+<span
+  uk-icon="trash"
+/>
+`;

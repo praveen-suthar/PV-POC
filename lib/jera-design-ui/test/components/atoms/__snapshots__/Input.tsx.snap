@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test Checkbox 1`] = `
+<input
+  checked={true}
+  className=" uk-checkbox"
+  onChange={[Function]}
+  type="checkbox"
+/>
+`;
+
+exports[`Render test DatePicker 1`] = `
+<input
+  className=" uk-input uk-form-small uk-text-small undefined undefined"
+  onChange={[Function]}
+  type="date"
+  value="2020-01-01"
+/>
+`;
+
+exports[`Render test Double 1`] = `
+<input
+  className=" uk-input uk-form-small uk-text-small undefined undefined"
+  onChange={[Function]}
+  onKeyDown={[Function]}
+  placeholder=""
+  step={0.01}
+  type="number"
+  value={0}
+/>
+`;
+
+exports[`Render test Integer 1`] = `
+<input
+  className=" uk-input uk-form-small uk-text-small undefined undefined"
+  onChange={[Function]}
+  onKeyDown={[Function]}
+  placeholder=""
+  type="number"
+  value={0}
+/>
+`;
+
+exports[`Render test Select 1`] = `
+<select
+  className=" uk-select uk-form-small uk-text-small undefined undefined"
+  onChange={[Function]}
+>
+  <option
+    disabled={true}
+  >
+     
+    -- select an option --
+     
+  </option>
+  <option
+    value={1}
+  >
+    Label 1
+  </option>
+  <option
+    value={2}
+  >
+    Label 2
+  </option>
+</select>
+`;
+
+exports[`Render test Text 1`] = `
+<input
+  className=" uk-input uk-form-small uk-text-small undefined undefined"
+  onChange={[Function]}
+  type="text"
+  value="hello"
+/>
+`;
+
+exports[`Render test TextArea 1`] = `
+<textarea
+  className=" uk-textarea atoms-input-textarea undefined undefined"
+  onChange={[Function]}
+  placeholder=""
+  rows={3}
+  value="hello"
+/>
+`;
+
+exports[`Render test Year 1`] = `
+<input
+  className=" uk-input uk-form-small uk-text-small undefined undefined"
+  max={2050}
+  min={1950}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onKeyDown={[Function]}
+  placeholder=""
+  type="number"
+  value={2020}
+/>
+`;

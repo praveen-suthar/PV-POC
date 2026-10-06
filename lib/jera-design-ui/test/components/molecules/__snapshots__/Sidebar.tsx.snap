@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test Sidebar 1`] = `
+<div
+  className=""
+>
+  <div
+    id="offcanvas-overlay"
+    uk-offcanvas="mode: push; overlay: true"
+  >
+    <div
+      className="uk-offcanvas-bar molecules-sidebar"
+    >
+      <div
+        className=" uk-text-large"
+      >
+        Contents
+      </div>
+      <div
+        className=" uk-divider-icon"
+      />
+      <ul
+        className="uk-nav-default uk-nav-parent-icon"
+        uk-nav="multiple: true"
+      >
+        <li
+          className=""
+        >
+          <a
+            className="
+      
+      atoms-button
+      uk-button-text
+      
+    "
+            href="/a"
+            onClick={[Function]}
+            type="button"
+          >
+            Link a
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className="
+      
+      atoms-button
+      uk-button-text
+      
+    "
+            href="/b"
+            onClick={[Function]}
+            type="button"
+          >
+            Link b
+          </a>
+        </li>
+        <li
+          className=" uk-parent"
+        >
+          <a
+            className="
+      
+      atoms-button
+      uk-button-text
+      
+    "
+            href=""
+            onClick={[Function]}
+            type="button"
+          >
+            Link set c
+          </a>
+          <ul
+            className="uk-nav-sub"
+          >
+            <li
+              className=""
+            >
+              <a
+                className="
+      
+      atoms-button
+      uk-button-text
+      
+    "
+                href="/c_a"
+                onClick={[Function]}
+                type="button"
+              >
+                Link c_a
+              </a>
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className="
+      
+      atoms-button
+      uk-button-text
+      
+    "
+                href="/c_b"
+                onClick={[Function]}
+                type="button"
+              >
+                Link c_b
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className="
+      
+      atoms-button
+      uk-button-text
+      
+    "
+            href="/d"
+            onClick={[Function]}
+            type="button"
+          >
+            Link d
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

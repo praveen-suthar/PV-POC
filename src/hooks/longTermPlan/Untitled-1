@@ -1,0 +1,85 @@
+1. calculateDailyCO2_EmmissionThermal
+    I) powerThermalForGivenTime = (getThermalData)
+    II) dailyCO2_EmmissionThermalCurveValues =  [24 values ] from json
+         "emmissionData": {
+      "thermal": "0.580",
+
+2. calculateDailyCO2_ReductionThermal 
+
+
+
+
+const zeroThermalData = graphUtils.calculateDailyPower(
+        selectedYear.value,
+        yearValue(currentyear),
+        (zerothermal constant value ),
+        zeroThermalValue,
+        zeroThermalList,
+        zeroThermalList,
+        currentYear
+      );
+      const windData = graphUtils.calculateDailyPower(
+        selectedYear.value,
+        yearValue(currentyear),
+       (wind constant value ),
+        windValue,
+        windList,
+        windList,
+        currentYear
+      );
+      const pvData = graphUtils.calculateDailyPower(
+        selectedYear.value,
+        yearValue(currentyear),
+        (pv constant value ),
+        pvValue,
+        pvList,
+        pvList,
+        currentYear
+      );
+
+
+
+
+const getThermalCalculateData = graphUtils.calculateDailyDemand(
+        selectedYear.value, 
+        yearValue,(currentyear)
+        fixDemandForCurrentYear,
+        demandValue,
+        [currentyear curve Data],
+        demandList,
+        currentYear
+      );
+
+      const getThermalData1 = graphUtils.calculateDailyPowerThermal(
+        getThermalCalculateData,
+        zeroThermalData,
+        pvData,
+        windData
+      );
+
+
+
+
+    i) calculateDailyCO2_ReductionThermal(powerThermalForCurrentYearGivenTime=(getThermalData1),powerThermalForYearGivenTime=(getThermalData),
+    
+   dailyCO2_EmmissionThermalCurveValuesForCurrentYear=  [24 values ], dailyCO2_EmmissionThermalCurveValuesForYear=[24 values ])
+
+
+
+
+
+
+   1) calculateDailyCO2_EmmissionForAllRequiredYears 
+
+        i) dailyThermalPowerForAllYears = calculateDailyThermalPowerForAllRequiredYears final Value 
+        ii) dailyCO2_EmmissionThermalCurveValues= [24 value thermal]
+
+
+   2) calculateDailyCO2_ReductionForAllRequiredYears
+
+       i) selectedYear
+       ii) powerThermalForCurrentYearGivenTime= getCurrentYearCO2AvoidThermalData
+       iii) dailyThermalPowerForAllYears = calculateDailyThermalPowerForAllRequiredYears final Value 
+       iv) dailyCO2_EmmissionThermalCurveValuesForCurrentYear= [24 value thermal]
+       v) dailyCO2_EmmissionThermalCurveValuesForYear= [24 value thermal]
+

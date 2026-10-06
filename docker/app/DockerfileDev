@@ -1,0 +1,19 @@
+FROM node:16.5.0 as base
+
+WORKDIR /usr/src/app
+
+# Install Dependencies
+COPY yarn.lock package.json ./
+COPY lib/jera-design-ui ./lib/jera-design-ui
+RUN yarn install
+RUN yarn build-lib
+
+FROM node:16.5.0-alpine as builder
+WORKDIR /usr/src/app
+COPY --from=base /usr/src/app/ /usr/src/app/
+
+# Copy Project files
+COPY . .
+RUN yarn link:jera-design-ui
+
+ENTRYPOINT [ "yarn", "start" ]

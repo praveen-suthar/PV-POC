@@ -1,0 +1,26 @@
+export const cssClassName = {
+  TOOLTIP_CONTENT: 'tooltip-content',
+  TOOLTIP_HEADER: 'tooltip-header',
+  COLOR_LABEL: 'color-label',
+  COLOR_WHITE: 'color-white',
+  COLOR_CIRCLE: 'color-circle indicate-bordered',
+  JERA_LIKE_ICON_CLASS: 'color-green-60 jera-like-1',
+  COLOR_GREEN_60: 'color-green-60',
+  CUSTOM_TOOLTIP: 'uk-tooltip-bottom-custom uk-tooltip-cutom text-highlight',
+  JERA_DISLIKE_ICON_CLASS: 'color-red-60 jera-dislike',
+  COLOR_RED_60: 'color-red-60',
+  COLOR_GREY_BLUE_80: 'color-grey-blue-80',
+  COLOR_GREY_BLUE_95: 'color-grey-blue-95',
+} as const
+export const graphColors = {
+  COLOR_THERMAL: '#CDCDCD',
+  ZERO_THERMAL: '#B96972',
+  PV: '#FBBB6F',
+  WIND: '#338FC0',
+  AVOIDED: '#8CC850',
+  AVOIDED_END: '#9FA5AD',
+  EMBISSION: '#ED9933',
+  EMBISSION_END: '#E39E4B',
+  PRICE_COST: '#C6F2E8',
+  BLUE_COLOR: '#54afde',
+}
